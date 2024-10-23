@@ -1,0 +1,247 @@
+int r1 = 0 ;
+int g1 = 0;
+int b1 = 0;
+int r2 = 0 ;
+int g2 = 0;
+int b2 = 0;
+int r3 = 0 ;
+int g3 = 0;
+int b3 = 0;
+int x = 160;
+int y = 160;
+
+void main (){
+  animate (menu);
+}
+
+
+
+void menu(){
+  imagen_pr();
+   boton_cr();
+ 	 boton_ins();
+ 		boton_ju();
+  texto_cr();
+  texto_ins();
+  texto_ju();
+  cambiocolor_cr();
+  cambiocolor_ins();
+  cambiocolor_ju();
+   diddy ();
+  funcion_cr();
+  funcion_ins();
+  funcion_ju();
+}
+   
+  
+
+//IMAGEN PRINCIPAL
+void imagen_pr(){
+  background(255,255,255);
+  image ("https://i.namu.wiki/i/VOBS787L04ZX4C-oxJeD8L_f1mjlsoV0KlC_nrUmninQixbLLAkNF6m3Iysj29F0r83zjl9z06ACyCClYQX_5A.webp",0,0,320,320);
+}
+
+//BOTONES
+void boton_cr(){
+   fill (r1,g1,b1);
+  rect (20,20,110,30);
+  }
+
+void boton_ins(){
+  fill(r2,g2,b2);
+  rect(190,20,110,30);
+}
+
+void boton_ju(){
+  fill(r3,g3,b3);
+  rect (110,270,110,30);
+}
+
+void boton_volver (){
+   fill(0,0,0);
+  rect (0,310,50,45);
+    fill(203,43,43);
+  textSize (8);
+    text ("Volver",10, 320 );
+}
+
+//COLORES DE BOTONES
+void cambiocolor_cr (){
+  if (mouseX > 20 && mouseX < 130 && mouseY > 20 && mouseY < 50){
+  	r1 = 178;
+    g1 = 56;
+    b1 = 187;
+    
+    boton_cr();
+    
+    fill(0,0,0);
+      texto_cr();
+  }
+  else {
+    r1 =0;
+    b1 = 0;
+    g1 = 0;
+  }
+}
+
+void cambiocolor_ins (){
+  if (mouseX > 190 && mouseX < 300 && mouseY > 20 && mouseY < 50){
+  	r2 = 242;
+    g2 = 10;
+    b2 = 94;
+    
+    boton_ins();
+    
+    fill(0,0,0);
+      texto_ins();
+  }
+  else{
+    r2 = 0;
+     b2 =0;
+    g2 = 0;
+  }
+}
+
+void cambiocolor_ju (){
+  if (mouseX > 111 && mouseX < 220 && mouseY > 270 && mouseY < 300){
+  	r3 = 64;
+    g3 = 190;
+    b3 = 124;
+    
+    boton_ju();
+    
+    fill(0,0,0);
+      texto_ju();
+  }
+   else{
+    r3 = 0;
+     b3 =0;
+    g3 = 0;
+  }
+}
+
+//COORDENADAS
+void diddy (){
+println ("X: " + mouseX + "Y: " + mouseY);
+  }
+
+//TEXTOS
+void texto_cr(){
+  fill(255,255,255);
+  text ("Créditos",40,42);
+}
+
+void texto_ins(){
+   fill(255,255,255);
+  textSize(13);
+  text("Instrucciones",195,42);
+}
+
+void texto_ju(){
+   fill(255,255,255);
+  text ("Jugar",145,290);
+}
+
+//BOTONES PULSADOS
+void cr (){
+  image ("https://ih1.redbubble.net/image.4748549236.6449/flat,750x,075,f-pad,750x1000,f8f8f8.jpg", 0, 0, 320,320);
+ 	fill(0,0,0);
+  text ("Hecho por", 120,30);
+  text ("Javier Soto Díaz", 90, 300);
+   boton_volver ();
+  funcion_boton_volver();
+  println ("X: " + mouseX + "Y: " + mouseY);
+}
+
+void ins (){
+  background(255,255,255);
+  image ("https://tr.rbxcdn.com/180DAY-a26716ff56c02022be12327a0fc526e8/420/420/Image/Png/noFilter", 0,0,320,320);
+  fill(0,0,0);
+  text ("Muévete con WASD",80,30);
+  text ("Y disfruta del juego!", 80, 280);
+  boton_volver ();
+  funcion_boton_volver();
+  println ("X: " + mouseX + "Y: " + mouseY);
+}
+
+
+void ju(){
+  image ("https://i.pinimg.com/736x/ef/17/24/ef17243e390255a2e624b18e1a8c2af1.jpg",0,0,320,320);
+  teclas ();
+   boton_volver ();
+  funcion_boton_volver();
+  println ("X: " + mouseX + "Y: " + mouseY);
+}
+
+//TECLAS Y JUGADOR
+void teclas(){
+  
+    if (y > 3 &&keyPressed && key == "up"){
+      y = y-5;
+    }
+  
+		if (x > 3 && keyPressed && key == "left"){
+      x = x-5;
+    }
+  
+		if (y < 280 &&keyPressed && key == "down"){
+      y = y +5;
+    }
+  
+		if (x < 280 && keyPressed && key == "right"){
+      x =x + 5;
+    }
+
+	jugador();
+}
+
+void jugador(){
+  fill(0,0,0);
+  image ("https://preview.redd.it/fluff-make-the-comments-on-this-post-look-like-battle-cats-v0-2fyrec945rzc1.png?width=640&crop=smart&auto=webp&s=f6b7850d5eac3c5e063f0bc1657c1b704132462b",x,y,40,40);
+ 
+}
+
+//FUNCIONES PARA LOS BOTONES
+void funcion_cr(){
+  if (mousePressed){
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 20 ){
+        if (mouseX < 130){
+          if (mouseY > 20){
+        		if (mouseY < 50);
+      
+  					animate (cr);
+          }}}}}}
+
+void funcion_ins(){
+  if (mousePressed){
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 190 ){
+        if (mouseX < 300){
+          if (mouseY > 20){
+        		if (mouseY < 50);
+      
+  					animate (ins);
+          }}}}}}
+
+void funcion_ju(){
+  if (mousePressed){
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 111 ){
+        if (mouseX < 220){
+          if (mouseY > 270){
+        		if (mouseY < 300);
+      
+  					animate (ju);
+          }}}}}}
+
+
+void funcion_boton_volver(){
+  if (mousePressed){
+    if (mouseButton == LEFTBUTTON){
+      if (mouseX > 2 ){
+        if (mouseX < 48){
+          if (mouseY > 310){
+        		if (mouseY < 320);
+            animate (menu);
+          }}}}}}
